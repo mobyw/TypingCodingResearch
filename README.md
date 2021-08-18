@@ -26,13 +26,13 @@
 
 定义使用全拼输入法撰写一篇文章的过程中，使用键盘输入中文的均衡度为各字母按键使用频率的样本标准差，即：
 
-$$B=\sqrt{\frac{\sum_{i=1}^{n}{(p_i - \overline{p})^2}}{n-1}}$$
+![](https://latex.codecogs.com/svg.image?B=\sqrt{\frac{\sum_{i=1}^{n}{(p_i&space;-&space;\overline{p})^2}}{n-1}})
 
 其中 $n=26$ 为英文字母数量，$p_i$ 为每个英文字母出现的频率，$\overline{p}$ 为平均频率。
 
 若考虑重新配列，即简单的取使用频率最高的七个键放置在高频使用区域，其他按键划分为另一个区域，则：
 
-$$B_r=\sqrt{\frac{\sum_{i=1}^{n}{(p_i - \overline{p_H})^2}}{n-1} + \frac{\sum_{j=1}^{m}{(p_j - \overline{p_L})^2}}{m-1}}$$
+![](https://latex.codecogs.com/svg.image?B_r=\sqrt{\frac{\sum_{i=1}^{n}{(p_i&space;-&space;\overline{p_H})^2}}{n-1}&space;&plus;&space;\frac{\sum_{j=1}^{m}{(p_j&space;-&space;\overline{p_L})^2}}{m-1}})
 
 其中 $n=7, m=20$ 分别为高频区和低频区英文字母数量，$p_i, p_j$ 为对应区域内每个英文字母出现的频率，$\overline{p_H}, \overline{p_H}$ 为高频区与低频区的平均频率。
 
@@ -42,7 +42,7 @@ $$B_r=\sqrt{\frac{\sum_{i=1}^{n}{(p_i - \overline{p_H})^2}}{n-1} + \frac{\sum_{j
 
 定义使用全拼输入法撰写一篇文章的过程中，使用键盘输入中文的效率为字数与字母数的比值，即：
 
-$$\eta = \frac{N_C}{N_T} \times 100\%$$
+![](https://latex.codecogs.com/svg.image?\eta&space;=&space;\frac{N_C}{N_T}&space;\times&space;100\%)
 
 其中 $N_C$ 为录入中文字符的个数，$N_T$ 为敲击键盘英文字母的次数。
 
@@ -104,11 +104,11 @@ Output: 打字编码方案及与全拼在均衡性和输入效率方面的对比
 
 经过对汉语拼音读音的统计，可以出现的音节如下图：
 
-![声母和介母韵母配对统计](./resources/Stat0.png)
+![声母和介母韵母配对统计](https://github.com/Moby-C/TypingCodingResearch/blob/main/resources/Stat0.png?raw=true)
 
 其中浅蓝色代表可配对，浅橙色代表无此配对，蓝色代表声母读音。明显可见有部分介母韵母和声母的搭配使用是不会重复的（其实大多也比较容易理解，介母的加入是根据声母决定），根据相似性原则找到所有不会重复的配对组合如下图：
 
-![可替换介母韵母](./resources/Stat1.png)
+![可替换介母韵母](https://github.com/Moby-C/TypingCodingResearch/blob/main/resources/Stat1.png?raw=true)
 
 一共有 7 对（"ang"），又由于 "er" 音节只能零声母使用，这样 34 个介母韵母刚好对应到 26 个字母键，经过对比发现，和现有的 26 键双拼方案基本一致（部分双拼配列是 27 键，额外使用了 ";" 键）。
 
@@ -184,7 +184,7 @@ Balance_r: 0.0158
 
 绘制优化前后的热力图如下图：
 
-![方案一热力图](./resources/Res0.png)
+![方案一热力图](https://github.com/Moby-C/TypingCodingResearch/blob/main/resources/Res0.png?raw=true)
 
 从热力图可以看出此方案仍未完全拜摆脱拼音原生的不均匀性，会造成在一些按键上集中，而部分按键仍使用较少。
 
@@ -289,13 +289,12 @@ Balance_r: 0.0203
 
 其热力图对比如下：
 
-![方案二热力图](./resources/Res1.png)
+![方案二热力图](https://github.com/Moby-C/TypingCodingResearch/blob/main/resources/Res1.png?raw=true)
 
 可以看到热力分布已经较为均匀。由于代码中绘制的热力图区域较小，看起来不够直观，我在一个基于 `heatmap.js` 的网站 [Keyboard Heatmap](https://www.patrick-wied.at/projects/heatmap-keyboard/) 上重新绘制了原始热力图和两张优化方案的热力图：
 
-![原始热力图](./resources/Tapmap0.png)
+![原始热力图](https://github.com/Moby-C/TypingCodingResearch/blob/main/resources/Tapmap0.png?raw=true)
 
-![方案一热力图](./resources/Tapmap1.png)
+![方案一热力图](https://github.com/Moby-C/TypingCodingResearch/blob/main/resources/Tapmap1.png?raw=true)
 
-![方案二热力图](./resources/Tapmap2.png)
-
+![方案二热力图](https://github.com/Moby-C/TypingCodingResearch/blob/main/resources/Tapmap2.png?raw=true)
