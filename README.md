@@ -298,3 +298,26 @@ Balance_r: 0.0203
 ![方案一热力图](https://github.com/Moby-C/TypingCodingResearch/blob/main/resources/Tapmap1.png?raw=true)
 
 ![方案二热力图](https://github.com/Moby-C/TypingCodingResearch/blob/main/resources/Tapmap2.png?raw=true)
+
+
+以上测试都是基于提供的附件《共产党宣言》进行，换为《马克思主义基本原理概论》使用方案二测试数据如下：
+
+```
+====== Original ======
+
+Lenth of Chinese characters: 191249
+Lenth of type coding: 573600
+Input efficiency: 0.3334
+Balance: 0.0383
+Balance_r: 0.0292
+
+====== Re-encode ======
+
+Lenth of Chinese characters: 191249
+Lenth of type coding: 382498
+Input efficiency: 0.5000
+Balance: 0.0185
+Balance_r: 0.0198
+```
+
+![热力图](https://github.com/Moby-C/TypingCodingResearch/blob/main/resources/Res2.png?raw=true)
